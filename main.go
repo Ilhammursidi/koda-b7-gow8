@@ -76,12 +76,20 @@ func main() {
 	fmt.Println()
 
 	Rectangle := task4.Rectangle{Width: 20, Height: 16}
-	Circle := task4.Circle{Radius: 10}
-	fmt.Print("Rectangle ")
-	fmt.Println(task4.Calculator(Rectangle))
-	fmt.Println("=================")
-	fmt.Print("Circle ")
-	fmt.Println(task4.Calculator(Circle))
+	Circle := task4.Circle{Radius: 20}
+
+	fmt.Print("Luas Persegi ")
+	fmt.Println(task4.Luas(Rectangle))
+	fmt.Print("Luas Lingkaran ")
+	fmt.Println(task4.Luas(Circle))
+	fmt.Println("=========================================")
+
+	shapes := []task4.Geometri{
+		task4.Rectangle{Width: 20, Height: 16},
+		task4.Circle{Radius: 20},
+	}
+	fmt.Println(task4.Calculator(shapes))
+	fmt.Println("=========================================")
 }
 
 func printUser(user *task3.User, err error) {
