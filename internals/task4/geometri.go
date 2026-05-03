@@ -8,26 +8,24 @@ import (
 type Geometri interface {
 	Area() float64
 }
+
 type Circle struct {
-	JariJari float64
+	Radius float64
 }
 
 type Rectangle struct {
 	Width, Height float64
 }
 
-func (rec Rectangle) Area() float64 {
-	return rec.Height * rec.Width
+func (c Circle) Area() float64 {
+	return math.Pi * c.Radius * c.Radius
 }
 
-func (ci Circle) Area() float64 {
-	return math.Pi * ci.JariJari * ci.JariJari
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
 }
 
-func Calculator(geo Geometri) string {
-	if _, isRectangle := geo.(Rectangle); isRectangle {
-		return fmt.Sprintf("Rectangle: %.2f", geo.Area())
-	}
-	return fmt.Sprintf("Circle: %.2f", geo.Area())
-
+func Calculator(total Geometri) string {
+	result := total.Area()
+	return fmt.Sprintf("total area :%v", result)
 }
