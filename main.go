@@ -74,10 +74,14 @@ func main() {
 	fmt.Println()
 	fmt.Println("nomor 4")
 	fmt.Println()
-	persegi := task4.Rectangle{Width: 20, Height: 15}
-	lingkaran := task4.Circle{JariJari: 10}
-	fmt.Println(task4.Calculator(persegi))
-	fmt.Println(task4.Calculator(lingkaran))
+
+	Rectangle := task4.Rectangle{Width: 20, Height: 16}
+	Circle := task4.Circle{Radius: 10}
+	fmt.Print("Rectangle ")
+	fmt.Println(task4.Calculator(Rectangle))
+	fmt.Println("=================")
+	fmt.Print("Circle ")
+	fmt.Println(task4.Calculator(Circle))
 }
 
 func printUser(user *task3.User, err error) {
