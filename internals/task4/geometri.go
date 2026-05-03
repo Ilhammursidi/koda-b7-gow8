@@ -25,7 +25,15 @@ func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
 }
 
-func Calculator(total Geometri) string {
-	result := total.Area()
-	return fmt.Sprintf("total area :%v", result)
+func Calculator(total []Geometri) string {
+	var result float64
+	for _, shape := range total {
+		result += shape.Area()
+	}
+	return fmt.Sprintf("total area: %v", result)
+}
+
+func Luas(hasil Geometri) string {
+	luas := hasil.Area()
+	return fmt.Sprintf(": %v", luas)
 }
